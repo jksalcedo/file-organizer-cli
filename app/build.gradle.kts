@@ -8,7 +8,7 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.kotlin.jvm)
-
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -29,6 +29,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
     implementation("com.github.ajalt.clikt:clikt:5.0.3")
 }
 
@@ -41,7 +42,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.AppKt"
+    mainClass = "jksalcedo.foc.AppKt"
 }
 
 tasks.named<Test>("test") {
